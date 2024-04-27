@@ -1,5 +1,5 @@
-const { createRequestHandler } = require("@remix-run/express");
-const express = require("express");
+import { createRequestHandler } from "@remix-run/express";
+import express from "express";
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.all(
   createRequestHandler({
     // `remix build` and `remix dev` output files to a build directory, you need
     // to pass that build to the request handler
-    build: require("./build"),
+    build: await import("./build/server/index.js"),
 
     // return anything you want here to be available as `context` in your
     // loaders and actions. This is where you can bridge the gap between Remix
@@ -19,3 +19,9 @@ app.all(
     },
   }),
 );
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Express server started on http://localhost:${port}`);
+});

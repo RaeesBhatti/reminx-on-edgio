@@ -1,15 +1,16 @@
 {
-  "name": "reminx-on-edgio",
-  "private": true,
-  "sideEffects": false,
-  "type": "module",
   "scripts": {
+    "edgio": "edgio",
     "build": "remix vite:build",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
+  "name": "reminx-on-edgio",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
   "dependencies": {
     "@remix-run/express": "^2.9.1",
     "@remix-run/react": "^2.9.1",
@@ -18,11 +19,16 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@edgio/cli": "^7.11.3",
+    "@edgio/core": "^7.11.3",
+    "@edgio/express": "^7.5.0",
+    "@edgio/prefetch": "^7.11.3",
     "@remix-run/dev": "^2.9.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
+    "@vercel/nft": "^0.26.4",
     "eslint": "^8.38.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.28.1",
